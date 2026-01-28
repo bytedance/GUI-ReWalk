@@ -22,7 +22,7 @@ from typing import List, Dict, Union
 
 import gymnasium as gym
 
-from OSWorld.desktop_env.controllers.python import PythonController
+from gui_rewalk.env.osworld_reload import PythonController
 from OSWorld.desktop_env.controllers.setup import SetupController
 from OSWorld.desktop_env.evaluators import metrics, getters
 from OSWorld.desktop_env.providers import create_vm_manager_and_provider

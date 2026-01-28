@@ -92,6 +92,7 @@ Test OSWorld with the official osworld testing script ([quickstart.py](https://g
 ```bash
 git clone https://github.com/microsoft/OmniParser.git
 cd OmniParser
+pip install -r requirements.txt
 
 # Download the model checkpoints to local directory OmniParser/weights/
 for f in icon_detect/{train_args.yaml,model.pt,model.yaml} icon_caption/{config.json,generation_config.json,model.safetensors}; do huggingface-cli download microsoft/OmniParser-v2.0 "$f" --local-dir weights; done
@@ -103,7 +104,7 @@ mv weights/icon_caption weights/icon_caption_florence
 #### 3.1 Run bash script to start a trace generating task
 
 ```bash
-bash run_random_walker.sh
+bash run_rewalk.sh
 ```
 
 #### 3.2 Parameter Explanation
