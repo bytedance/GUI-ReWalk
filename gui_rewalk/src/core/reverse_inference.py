@@ -325,9 +325,9 @@ def expand_and_crop_ocr_region(
     center_y = (y1 + y2) / 2
     
     # 计算原始区域宽度和高度
-    original_width = x2 - x1
-    original_height = y2 - y1
-    
+    original_width = x2 - x1 if x2 != x1 else 1
+    original_height = y2 - y1 if y2 != y1 else 1 
+
     # 计算扩大后的区域宽度和高度
     new_width = original_width * scale_factor
     new_height = original_height * scale_factor
@@ -415,6 +415,11 @@ def draw_and_crop_ocr_region(
             draw.rectangle([x_min, y_min, x_max, y_max], outline=color, width=width)
     else:
         x_min, y_min, x_max, y_max = bbox["x_min"], bbox["y_min"], bbox["x_max"], bbox["y_max"]
+        if x_max == x_min or y_max == y_min:
+            x_min -= 50
+            y_min -= 50
+            x_max += 50
+            y_max += 50
 
         # 绘制矩形框
         draw.rectangle([x_min, y_min, x_max, y_max], outline=color, width=width)

@@ -1,16 +1,16 @@
-export PYTHONPATH=$PYTHONPATH:/Path/to/GUI-ReWalk_release
-export API_KEY="your api key"
-export API_BASE_URL="your model base url"
+export PYTHONPATH=$PYTHONPATH:/Path/to/GUI-ReWalk
+export API_KEY="your model api key"
+export API_BASE_URL="your model api base url"
 
 
 python gui_rewalk/run_random_walker.py \
-    --task_num 2 \
+    --task_num 1 \
     --vm_provider "vmware" \
-    --path_to_vm  "absolute path to vmware vm" \
+    --path_to_vm  "Path/to/Ubuntu0.vmx" \
     --observation_type screenshot \
     --action_space gen_data \
-    --model choose from {qwen, doubao} \
-    --model_version your model name\
+    --model doubao or qwen \
+    --model_version your model api name\
     --exce_task_completion True \
     --reverse_inference True \
     --summary_inference True \
