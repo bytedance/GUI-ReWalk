@@ -1,4 +1,4 @@
-export PYTHONPATH=$PYTHONPATH:/Path/to/GUI-ReWalk_release
+export PYTHONPATH=$PYTHONPATH:/Path/to/GUI-ReWalk
 export API_KEY="your api key"
 export API_BASE_URL="your model base url"
 
